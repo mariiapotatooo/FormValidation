@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validering </title>
+</head>
+<body>
+
+
+    <h1> Array med 10 tal </h1>
+
+    <p id="arrOsort"> </p>
+    <p id="arrSort"> </p>
+
+    <script> 
+
+    let arrNr =[];
+   while (arrNr.length <= 10) {
+    let randNr=Math.ceil(Math.random() * 100);            //gennerera tal     // lagra random tal i array gennom att loppa 
+  if( !arrNr.includes(randNr)) { 
+    arrNr.push(randNr);                            // om rarray inte har tal ska den pusha talet innuti 
+   }                                                   
+ }  
+    
+    document.getElementById("arrOsort").innerText= "Osorterade " + arrNr;
+    document.getElementById("arrSort").innerText= "sorterade " + arrNr.sort(( a,b) => a - b );
+    // byter p /texten med random nummer
+   
+    </script>
+    
+
+    <hr> 
+    <h1> validering med js </h1>
+
+    <form action = "#" method="post" id="myform" onsubmit="validate ()"> 
+
+        User <br> 
+        <input type="text"  id="Uname"  name="Uname"> <br> 
+            Password <br>
+        <input   type="password" id="Pass1" name="pass1"> <br>
+            passsword 2  <br>
+    <input   type="password" id="Pass2" name="pass2"> <br>
+        Villkor <br>
+    <input  type="checkbox" id="villkor" name="villkor"> <br> 
+
+    <input type="submit"  value="Done"> 
+
+
+    <script>  
+    function validate() {
+        let userName=document.forms[ "myform" ]["vilkor"]. checked; 
+    }
+
+    if (username == "") {
+        alert ("Du måste skriva användenamn ") ; 
+    } 
+    else if ( pass1 == "" || passWordl.length <6 ){ 
+        alert( "Måste innehålla 6 tecken ")
+        
+    }
+
+    else if (passWord1 != passWord2) {
+        alert("du måste repetera samma lösenord")
+
+    } 
+    else if ( eMajl == "" || !eMajl.includes ("@")) {
+        
+    }
+    
+    </script>
+
+
+ 
+
+ 
+
+
+
+    </form>
+</body>
+</html>
